@@ -6,7 +6,7 @@ joinfaces:
 logging:
     level:
         de:
-            wdr:
+            bluewhale:
                 voice: DEBUG
         org:
             springframework: WARN
