@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui" xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<f:metadata>
+    <f:view locale="#{localeBean.locale}" contentType="text/html" encoding="utf-8"/>
+    <f:loadBundle basename="i18n.messages" var="msg"/>
+</f:metadata>
+
+<h:head>
+    <title>A Landing Page</title>
+</h:head>
+
+<h:body>
+    <ui:composition template="/template/masterLayout.xhtml">
+
+        <ui:define name="content">
+            <h1>#{msg['homepage.welcome.h']}</h1>
+            <h:form id="test">
+                <div id="sample" class="container">
+                    <p:spacer height="20px"/>
+                    <h:panelGrid columns="2" cellpadding="20">
+                        <p:button id="stdButton" value="Button to Subpage with f:viewAction" outcome="subView"/>
+                        <p:button id="rpButton" value="RP-Report" outcome="rpReportView"/>
+                    </h:panelGrid>
+                </div>
+            </h:form>
+            <br/>
+            <p:messages id="messages" showDetail="true" closable="true">
+                <p:autoUpdate/>
+            </p:messages>
+        </ui:define>
+    </ui:composition>
+</h:body>
+
+</html>

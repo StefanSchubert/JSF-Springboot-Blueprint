@@ -1,0 +1,32 @@
+joinfaces:
+    jsf:
+        project-stage: development
+    primefaces:
+        theme: omega
+logging:
+    level:
+        de:
+            wdr:
+                voice: DEBUG
+        org:
+            springframework: WARN
+    pattern:
+        console: '%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level)
+            %logger.%M - %msg%n'
+name: webApp
+server:
+    port: 8080
+    servlet:
+        context-path: /
+servlet:
+    container:
+        maxThreads: 128
+spring:
+    messages:
+        basename: i18n/messages
+        encoding: UTF-8
+    servlet:
+        encoding:
+            charset: UTF-8
+            force: true
+            enabled: true

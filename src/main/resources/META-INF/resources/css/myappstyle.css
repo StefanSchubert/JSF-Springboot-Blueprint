@@ -1,0 +1,20 @@
+
+.mobilescreen {
+    padding: 15px;
+    /*width: 600px;*/
+}
+
+.popupdialog {
+    background-color: darkseagreen;
+    width: 400px;
+}
+
+.text {
+    font-size: 1.8vw;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Primefaces adoptions */
+.ui-messages ul {
+    font-size: 1.8vw;
+}
