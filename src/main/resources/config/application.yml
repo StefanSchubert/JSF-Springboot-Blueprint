@@ -2,7 +2,7 @@ joinfaces:
     jsf:
         project-stage: development
     primefaces:
-        theme: omega
+        theme: flick
 logging:
     level:
         de:
