@@ -29,7 +29,8 @@
                     <p:spacer height="20px"/>
                     <h:panelGrid columns="2" cellpadding="20">
                         <p:button id="justButtonw" value="Button to Subpage with f:viewAction" outcome="pageA"/>
-                        <p:commandButton id="cmdButton" value="commandButton" action="#{sampleView.businessCallViaCommandWithOutcomeNavigation}"/>
+                        <p:button id="e404" value="Navigate to non existing target" outcome="nowhere" />
+                        <p:commandButton id="cmdButton" value="SimulateBackenError" action="#{sampleView.simulateBackendError}"/>
                     </h:panelGrid>
                 </div>
             </h:form>
