@@ -28,9 +28,8 @@
                 <div id="sample" class="container">
                     <p:spacer height="20px"/>
                     <h:panelGrid columns="2" cellpadding="20">
-                        <p:button id="justButtonw" value="Button to Subpage with f:viewAction" outcome="pageA"/>
-                        <p:button id="e404" value="Navigate to non existing target" outcome="nowhere" />
-                        <p:commandButton id="cmdButton" value="SimulateBackenError" action="#{sampleView.simulateBackendError}"/>
+                        <p:commandButton id="e404" value="Navigate to non existing target" action="#{sampleView.simulate404Error}" ajax="false" />
+                        <p:commandButton id="cmdButton" value="SimulateBackenError" action="#{sampleView.simulateBackendError}" ajax="false"/>
                     </h:panelGrid>
                 </div>
             </h:form>

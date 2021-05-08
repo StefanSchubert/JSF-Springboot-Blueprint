@@ -20,11 +20,6 @@ public class SampleView implements Serializable {
     @Autowired
     LocaleBean localeBean;
 
-    public String businessCallViaCommandWithOutcomeNavigation() {
-        log.info("Bussiness Logic of B called.");
-        return "pageB";
-    }
-
     public void businessCallViaViewAction() {
         log.info("Bussiness Logic of A called.");
     }
@@ -40,7 +35,7 @@ public class SampleView implements Serializable {
     }
 
     public String simulate404Error()  {
-        return "ThisOutComeDOesNotExists";
+        return "ThisOutComeDoesNotExists";
     }
 
 

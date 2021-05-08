@@ -1,32 +1,34 @@
 joinfaces:
-    jsf:
-        project-stage: development
-    primefaces:
-        theme: flick
+  jsf:
+    project-stage: development
+  primefaces:
+    theme: flick
 logging:
-    level:
-        de:
-            bluewhale:
-                voice: DEBUG
-        org:
-            springframework: WARN
-    pattern:
-        console: '%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level)
+  level:
+    de:
+      bluewhale:
+        voice: DEBUG
+    org:
+      springframework: WARN
+  pattern:
+    console: '%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level)
             %logger.%M - %msg%n'
 name: webApp
 server:
-    port: 8080
-    servlet:
-        context-path: /
-servlet:
-    container:
-        maxThreads: 128
+  port: 8080
+  servlet:
+    context-path: /
+  container:
+    maxThreads: 128
+  error:
+    whitelabel:
+      enabled: false
 spring:
-    messages:
-        basename: i18n/messages
-        encoding: UTF-8
-    servlet:
-        encoding:
-            charset: UTF-8
-            force: true
-            enabled: true
+  messages:
+    basename: i18n/messages
+    encoding: UTF-8
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
