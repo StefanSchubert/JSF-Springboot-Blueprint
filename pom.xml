@@ -25,7 +25,6 @@
         <joinfaces.version>4.6.3</joinfaces.version>
     </properties>
 
-
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -55,22 +54,6 @@
             <version>1.0.10</version>
         </dependency>
 
-        <dependency>
-            <groupId>javax.enterprise</groupId>
-            <artifactId>cdi-api</artifactId>
-            <version>2.0.SP1</version>
-        </dependency>
-
-
-<!--        <dependency>-->
-<!--            &lt;!&ndash; unfortunately currently required because of-->
-<!--            https://mkyong.com/jsf2/jsf-2-0-tomcat-it-appears-the-jsp-version-of-the-container-is-older-than-2-1/-->
-<!--            try to remove this dependency from time to time when upgrading joinfaces.-->
-<!--            &ndash;&gt;-->
-<!--            <groupId>org.glassfish.web</groupId>-->
-<!--            <artifactId>el-impl</artifactId>-->
-<!--            <version>2.2</version>-->
-<!--        </dependency>-->
 
         <!-- Required to be enable of page redirects, as we no longer have the web.xml
              see https://codenotfound.com/jsf-primefaces-welcome-page-redirect-example.html

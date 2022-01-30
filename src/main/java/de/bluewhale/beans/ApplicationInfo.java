@@ -1,21 +1,21 @@
-package de.bluewhale.CDIBeans;
+package de.bluewhale.beans;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.info.BuildProperties;
+import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.ApplicationScope;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Named;
 
 /**
  * Container for application specific static information.
  *
  * @author Stefan Schubert
  */
-@Named
-@ApplicationScoped
+@ApplicationScope
 @Slf4j
+@Component
 public class ApplicationInfo {
 
     public static String buildVersion = "N/A";

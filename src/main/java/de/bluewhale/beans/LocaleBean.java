@@ -1,17 +1,17 @@
-package de.bluewhale.CDIBeans;
+package de.bluewhale.beans;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.SessionScope;
 
-import javax.inject.Named;
 import java.io.Serializable;
 import java.util.Locale;
 
 
-@Named
 @SessionScope
 @Slf4j
+@Component
 public class LocaleBean implements Serializable {
 
     private Locale locale;

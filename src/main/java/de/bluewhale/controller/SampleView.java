@@ -1,16 +1,16 @@
 package de.bluewhale.controller;
 
-import de.bluewhale.CDIBeans.LocaleBean;
+import de.bluewhale.beans.LocaleBean;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.RequestScope;
 
-import javax.inject.Named;
 import java.io.Serializable;
 
-@Named
 @RequestScope
+@Component
 @Slf4j
 @Getter
 public class SampleView implements Serializable {
