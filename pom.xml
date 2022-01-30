@@ -6,7 +6,7 @@
 
     <groupId>org.example</groupId>
     <artifactId>JSF_SpringBoot_Blueprint</artifactId>
-    <version>1.1</version>
+    <version>1.2</version>
     <description>A Sample Projektlayout to start with.</description>
 
     <inceptionYear>2020</inceptionYear>
@@ -14,7 +14,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.4.3</version>
+        <version>2.6.3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -22,7 +22,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>11</java.version>
-        <joinfaces.version>4.5.0-m2</joinfaces.version>
+        <joinfaces.version>4.6.3</joinfaces.version>
     </properties>
 
 
@@ -42,6 +42,7 @@
 
         <dependency>
             <groupId>org.joinfaces</groupId>
+<!--            <artifactId>jsf-spring-boot-starter</artifactId>-->
             <artifactId>primefaces-spring-boot-starter</artifactId>
         </dependency>
 
@@ -57,7 +58,19 @@
         <dependency>
             <groupId>javax.enterprise</groupId>
             <artifactId>cdi-api</artifactId>
+            <version>2.0.SP1</version>
         </dependency>
+
+
+<!--        <dependency>-->
+<!--            &lt;!&ndash; unfortunately currently required because of-->
+<!--            https://mkyong.com/jsf2/jsf-2-0-tomcat-it-appears-the-jsp-version-of-the-container-is-older-than-2-1/-->
+<!--            try to remove this dependency from time to time when upgrading joinfaces.-->
+<!--            &ndash;&gt;-->
+<!--            <groupId>org.glassfish.web</groupId>-->
+<!--            <artifactId>el-impl</artifactId>-->
+<!--            <version>2.2</version>-->
+<!--        </dependency>-->
 
         <!-- Required to be enable of page redirects, as we no longer have the web.xml
              see https://codenotfound.com/jsf-primefaces-welcome-page-redirect-example.html
@@ -85,7 +98,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.10</version>
+            <version>1.18.22</version>
             <scope>compile</scope>
         </dependency>
 
