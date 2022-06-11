@@ -1,12 +1,11 @@
 package de.bluewhale.beans;
 
+import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.info.BuildProperties;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.ApplicationScope;
-
-import javax.annotation.PostConstruct;
 
 /**
  * Container for application specific static information.

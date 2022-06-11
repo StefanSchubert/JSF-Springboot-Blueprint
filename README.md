@@ -54,7 +54,11 @@ quite a lot of applications. Here's some pro/cons I see:
     * images
 * Page Templating
 
-  
+## Usage
+
+* Use a Java17 SDK
+* Do a mvn package command otherwise you would get a runtime error.
+
 ## About me
 
 I wouldn't count myself as a frontend-engineer. I feel safer in backend areas, but from time to time I strive the frontend.
