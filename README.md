@@ -17,6 +17,12 @@ something phenomena. After 20 years of software experience I observed:
     * Quite a lot of examples you found on the net where valid at their time, but can be totally wrong when being
     applied to current versions as the api and behavior has evolved.
 
+## Usage
+
+* Use a Java17 SDK
+* The example rely on a version parameter which will we available when packaging.
+* So you need to do a mvn package command otherwise you would get a runtime error.
+
 ## Why choosing JSF in the age of angular, react and Co.?
 
 JSF is/was? an established technology on the market which long ago survived/passed the hype curve.
@@ -53,11 +59,6 @@ quite a lot of applications. Here's some pro/cons I see:
     * css
     * images
 * Page Templating
-
-## Usage
-
-* Use a Java17 SDK
-* Do a mvn package command otherwise you would get a runtime error.
 
 ## About me
 
