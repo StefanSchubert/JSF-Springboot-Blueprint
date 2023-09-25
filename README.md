@@ -19,7 +19,10 @@ something phenomena. After 20 years of software experience I observed:
 
 ## Usage
 
-* Use a Java17 SDK
+* Use a Java21 SDK
+* do a mvn package
+* start the spring boot app 
+* point your browser to localhost:8080
 * The example rely on a version parameter which will we available when packaging.
 * So you need to do a mvn package command otherwise you would get a runtime error.
 
