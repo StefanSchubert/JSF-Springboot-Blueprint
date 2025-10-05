@@ -6,7 +6,7 @@
 
     <groupId>org.example</groupId>
     <artifactId>JSF_SpringBoot_Blueprint</artifactId>
-    <version>1.2.1</version>
+    <version>1.2.2</version>
     <description>A Sample Projektlayout to start with.</description>
 
     <inceptionYear>2020</inceptionYear>
@@ -14,16 +14,17 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.1.4</version>
+        <version>3.5.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>21</java.version>
-        <joinfaces.version>5.1.4</joinfaces.version>
-        <lombok.version>1.18.30</lombok.version>
+        <java.version>25</java.version>
+        <joinfaces.version>5.5.6</joinfaces.version>
+        <lombok.version>1.18.42</lombok.version>
+        <versions.maven.plugin.version>2.19.1</versions.maven.plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -40,10 +41,18 @@
 
     <dependencies>
 
+        <!-- Primefaces -->
         <dependency>
             <groupId>org.joinfaces</groupId>
-<!--            <artifactId>jsf-spring-boot-starter</artifactId>-->
             <artifactId>primefaces-spring-boot-starter</artifactId>
+            <version>${joinfaces.version}</version>
+            <exclusions>
+                <exclusion>
+                    <!-- favor log4j2 over logback -->
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
 
@@ -75,6 +84,11 @@
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
             <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
         </dependency>
 
         <!-- Test Context -->
@@ -113,6 +127,16 @@
                 <configuration>
                     <release>${java.version}</release>
                     <encoding>UTF-8</encoding>
+                    <annotationProcessorPaths>
+                        <path>
+                            <!-- Process lombok annotations found in included libraries.
+                                 Required e.g. for sabi-boundary.
+                            -->
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${lombok.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
             <plugin>
@@ -140,16 +164,22 @@
             </plugin>
 
             <plugin>
-                <!--
-                Description from: https://docs.joinfaces.org/current/reference/
-                JoinFaces provides org.joinfaces:joinfaces-maven-plugin Maven plugin
-                to configure a classpath scan at build-time in order to reduce the
-                startup time of applications which use an embedded servlet container.
-                -->
-                <groupId>org.joinfaces</groupId>
-                <artifactId>joinfaces-maven-plugin</artifactId>
+                <!-- This will check for newer version on dependencies which are
+                     controlled by version property variables -->
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>${versions.maven.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <!--                            <goal>display-dependency-updates</goal>-->
+                            <!--                            <goal>display-plugin-updates</goal>-->
+                            <goal>display-property-updates</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
-
         </plugins>
     </build>
 </project>

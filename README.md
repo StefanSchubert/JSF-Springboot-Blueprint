@@ -19,7 +19,7 @@ something phenomena. After 20 years of software experience I observed:
 
 ## Usage
 
-* Use a Java21 SDK
+* Use a Java25 SDK
 * do a mvn package
 * start the spring boot app 
 * point your browser to localhost:8080
