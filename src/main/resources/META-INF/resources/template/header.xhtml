@@ -1,11 +1,38 @@
 <ui:composition
         xmlns="http://www.w3.org/1999/xhtml"
         xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-        xmlns:h="http://xmlns.jcp.org/jsf/html">
+        xmlns:h="http://xmlns.jcp.org/jsf/html"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <h:outputStylesheet name="primeicons/primeicons.css" library="primefaces"/>
-    <ui:remove>
-        <!--    What ever you like as Header-->
-        <!--    <p:separator/>-->
-    </ui:remove>
+
+    <!-- Theme-Selector: sichtbar auf allen Seiten via masterLayout.
+         Mechanismus: onchange klickt einen versteckten non-AJAX-Button → voller HTTP-Submit
+         → Server-Redirect. Kein window.location.reload() nötig, keine Race-Condition. -->
+    <div class="theme-switcher">
+        <span class="pi pi-palette theme-switcher-icon" title="Theme wählen"/>
+        <label for="themeForm:themeSelect" class="theme-switcher-label">Theme:</label>
+        <h:form id="themeForm" style="margin:0;">
+            <p:selectOneMenu id="themeSelect"
+                             value="#{themeBean.theme}"
+                             styleClass="theme-switcher-menu"
+                             title="PrimeFaces Theme wählen"
+                             onchange="document.getElementById('themeForm:applyBtn').click();">
+                <f:selectItems value="#{themeBean.availableThemes}"/>
+            </p:selectOneMenu>
+            <!-- Versteckter non-AJAX-Button: submitted via onchange oben.
+                 ajax="false" → voller Page-Roundtrip, Server gibt Redirect zurück,
+                 Browser lädt die Seite neu mit dem neuen Theme im <head>. -->
+            <p:commandButton id="applyBtn"
+                             style="display:none;"
+                             action="#{themeBean.switchThemeWithRedirect}"
+                             ajax="false"/>
+        </h:form>
+    </div>
+    <p:separator style="margin:0;"/>
+
 </ui:composition>
+
+
+

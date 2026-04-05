@@ -14,7 +14,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.5.0</version>
+        <version>4.0.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -22,9 +22,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>25</java.version>
-        <joinfaces.version>5.5.6</joinfaces.version>
-        <lombok.version>1.18.42</lombok.version>
-        <versions.maven.plugin.version>2.19.1</versions.maven.plugin.version>
+        <joinfaces.version>6.0.5</joinfaces.version>
+        <lombok.version>1.18.44</lombok.version>
+        <versions.maven.plugin.version>2.21.0</versions.maven.plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -141,19 +141,16 @@
             </plugin>
             <plugin>
                 <!--
-                Description from: https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html
-                The Spring Boot Maven Plugin provides Spring Boot support in Maven,
-                letting you package executable jar or war archives and run an application
-                “in-place”. To use it, you must use Maven 3.2 (or later).
+                The Spring Boot Maven Plugin provides Spring Boot support in Maven:
+                - Repackages the JAR into a runnable fat-JAR (uber-JAR) via the implicit 'repackage' goal
+                - Generates build-info.properties (exposed via Actuator /actuator/info)
+                - Enables 'mvn spring-boot:run' for local development
+                - Supports OCI image creation via 'build-image' goal (Cloud Native Buildpacks)
+                Note: The 'executable=true' option (prepended shell-script for /etc/init.d)
+                      was removed in Spring Boot 4. Use systemd native service units instead.
                 -->
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <!-- Build a fully executable jar to use it via /etc/init.d
-                         see https://docs.spring.io/spring-boot/docs/current/reference/html/deployment-install.html
-                    -->
-                    <executable>true</executable>
-                </configuration>
                 <executions>
                     <execution>
                         <goals>

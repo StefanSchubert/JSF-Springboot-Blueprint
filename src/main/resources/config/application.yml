@@ -1,8 +1,14 @@
 joinfaces:
-    jsf:
-        project-stage: development
+    faces:
+        # Replaces the deprecated 'joinfaces.jsf.*' namespace (renamed to 'joinfaces.faces.*'
+        # in JoinFaces 6.x to align with the Jakarta Faces specification name).
+        project-stage: Development
     primefaces:
-        theme: saga
+        # Theme is no longer set statically – ThemeBean (SessionScope) loads the theme
+        # dynamically via a <link> tag in masterLayout.xhtml.
+        # "none" prevents JoinFaces/PrimeFaces from injecting its own default theme,
+        # which would conflict with the dynamically loaded one.
+        theme: none
 logging:
     level:
         de:
@@ -13,14 +19,13 @@ logging:
     pattern:
         console: '%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level)
             %logger.%M - %msg%n'
-name: webApp
 server:
     port: 8080
     servlet:
         context-path: /
-servlet:
-    container:
-        maxThreads: 128
+    tomcat:
+        threads:
+            max: 128
 spring:
     messages:
         basename: i18n/messages
