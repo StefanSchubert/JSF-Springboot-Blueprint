@@ -18,3 +18,50 @@
 .ui-messages ul {
     font-size: 1.8vw;
 }
+
+/* ── Theme-Switcher ────────────────────────────────────────────────────────────
+   Explizite, theme-unabhängige Farben damit der Selector in JEDEM PrimeFaces-
+   Theme (hell oder dunkel) klar erkennbar ist.
+   ─────────────────────────────────────────────────────────────────────────── */
+.theme-switcher {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 6px 12px;
+    gap: 8px;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #c0c0c0;
+}
+
+.theme-switcher-icon {
+    font-size: 1.1rem;
+    color: #444;
+}
+
+.theme-switcher-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #333;
+    white-space: nowrap;
+}
+
+/* PrimeFaces rendert p:selectOneMenu als .ui-selectonemenu.
+   Explizite Umrandung und Hintergrund, damit es in allen Themes sichtbar ist. */
+.theme-switcher-menu.ui-selectonemenu {
+    min-width: 230px;
+    background-color: #ffffff !important;
+    border: 1px solid #888 !important;
+    color: #222 !important;
+}
+
+.theme-switcher-menu.ui-selectonemenu .ui-selectonemenu-label {
+    color: #222 !important;
+    background-color: #ffffff !important;
+}
+
+.theme-switcher-menu.ui-selectonemenu .ui-selectonemenu-trigger {
+    background-color: #e8e8e8 !important;
+    border-left: 1px solid #888 !important;
+    color: #444 !important;
+}
+

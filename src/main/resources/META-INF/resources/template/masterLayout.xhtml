@@ -17,9 +17,14 @@
     <link rel="icon"
           type="image/x-icon"
           href="#{resource['images:favicon.ico']}"/>
+    <!-- PrimeFaces Theme – dynamisch per Session, gesteuert über ThemeBean.
+         Ein plain <link> (kein h:outputStylesheet) ist nötig, damit EL zur
+         Laufzeit ausgewertet wird und ein Theme-Wechsel per JS-Reload greift. -->
+    <link rel="stylesheet"
+          href="#{request.contextPath}/jakarta.faces.resource/theme.css.xhtml?ln=primefaces-#{themeBean.theme}"/>
+    <h:outputStylesheet library="css" name="myappstyle.css"/>
 </h:head>
 
-<h:outputStylesheet library="css" name="myappstyle.css"/>
 <h:body styleClass="mobilescreen">
 
     <div id="header"><ui:include src="/template/header.xhtml"/></div>
