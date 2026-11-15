@@ -14,7 +14,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>4.1.0</version>
+        <version>4.1.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -22,9 +22,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>25</java.version>
-        <joinfaces.version>6.1.0</joinfaces.version>
-        <lombok.version>1.18.46</lombok.version>
-        <versions.maven.plugin.version>2.21.0</versions.maven.plugin.version>
+        <joinfaces.version>6.1.1</joinfaces.version>
+        <lombok.version>1.18.48</lombok.version>
+        <versions.maven.plugin.version>2.25.2</versions.maven.plugin.version>
     </properties>
 
     <dependencyManagement>
